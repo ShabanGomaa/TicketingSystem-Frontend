@@ -156,22 +156,8 @@ export class SystemService {
     async Get_Languages() {
         let lst: any = [
             { Key: 'Arabic', Value: 'AE' },
-            { Key: 'Chinese', Value: 'TW' },
-            { Key: 'Danish', Value: 'DK' },
-            { Key: 'Dutch', Value: 'NL' },
             { Key: 'English', Value: 'EN' },
             { Key: 'French', Value: 'FR' },
-            { Key: 'German', Value: 'DE' },
-            { Key: 'Greek', Value: 'GR' },
-            { Key: 'Hungarian', Value: 'HU' },
-            { Key: 'Italian', Value: 'IT' },
-            { Key: 'Japanese', Value: 'JP' },
-            { Key: 'Polish', Value: 'PL' },
-            { Key: 'Portuguese', Value: 'PT' },
-            { Key: 'Russian', Value: 'RU' },
-            { Key: 'Spanish', Value: 'ES' },
-            { Key: 'Swedish', Value: 'SE' },
-            { Key: 'Turkish', Value: 'TR' }
         ];
         return lst;
     }
@@ -301,7 +287,7 @@ class DataHelper {
     }
     private _hubConnection: HubConnection;
     constructor(public http: HttpClient, public App: AppHelper, public service: SystemService) {
-        this.SetHttpOptions();
+        this.SetHttpOptions2();
         //if (this.service.Account.Is_Enable_SignalR) {
         if (!this.IsConnected) {
             this.createConnection();
@@ -343,15 +329,36 @@ class DataHelper {
     public httpOptions_empty = { headers: new HttpHeaders() };
     SetHttpOptions() {
         this.BearerToken = this.App.getCookie("Bearer");
+
+        let headers = new HttpHeaders();
+        headers.append("Content-Type", "application/json; charset=utf-8");
+
         this.httpOptions = {
             headers: new HttpHeaders({
                 'Content-Type': 'application/json',
-                'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Methods': '*', 'Access-Control-Allow-Headers': '*',
+                'Access-Control-Allow-Origin': '*',
+                'Access-Control-Allow-Methods': '*',
+                'Access-Control-Allow-Headers': '*',
                 'Authorization': 'Bearer ' + this.BearerToken
             })
         };
         this.httpOptions_empty = {
             headers: new HttpHeaders({ 'Authorization': 'Bearer ' + this.BearerToken })
+        };
+    }
+
+    SetHttpOptions2() {
+        this.BearerToken = this.App.getCookie("Bearer");
+
+        let headers = new HttpHeaders();
+
+        this.httpOptions = {
+            headers: headers
+        };
+
+        headers.append("Authorization", 'Bearer ' + this.BearerToken);
+        this.httpOptions_empty = {
+            headers: headers
         };
     }
 

@@ -1,7 +1,7 @@
 ﻿export const environment = {
     production: true,
-    Base_API_URL: 'https://api.bmsdesk.com',
-    Site_URL: 'https://bmsdesk.com',
+    Base_API_URL: 'http://192.168.248.22:71',
+    Site_URL: 'http://192.168.248.22:44',
     Expiration_Time: 60
 };
 

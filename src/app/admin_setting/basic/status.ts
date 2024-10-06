@@ -1,6 +1,6 @@
 ﻿import { Component, ViewChild, ElementRef } from '@angular/core';
 import { Router } from '@angular/router';
-import { FormBuilder, FormGroup, Validators, NgForm } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators, NgForm } from '@angular/forms';
 import { SystemService } from '../../shared/SystemService';
 import { GridFilter } from '../../shared/common_model';
 import { ModalDialog } from '../../shared/modal.dialog';
@@ -16,7 +16,7 @@ export class StatusComponent {
     isLoading = false; allItems: Array<Status_Model> = []; txtSearch = "";
     totalitems: number; gridFilter: Array<GridFilter> = [];
     Is_SaveAndAddNew: boolean = false;
-    constructor(public fb: FormBuilder, public service: SystemService, public router: Router) {
+    constructor(public fb: UntypedFormBuilder, public service: SystemService, public router: Router) {
         this.service.GoTo_ScrollTop(window);
 
         this.gridFilter.push(<GridFilter>{ DisplayText: "lblStatusName", ColumnName: "Name", Condition: "no", Type: "string", Value: "", Is_Visible: true });
@@ -49,7 +49,7 @@ export class StatusComponent {
     pageChanged(obj: any) { }
 
     //Add/Edit 
-    StatusForm: FormGroup; isEdit = false;
+    StatusForm: UntypedFormGroup; isEdit = false;
     @ViewChild('f') form: NgForm;
     @ViewChild("modalAdd") modalAdd: ModalDialog;
     initForm() {

@@ -1,7 +1,7 @@
 ﻿import { Component, ViewChild } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
-import { FormBuilder } from '@angular/forms';
+import { UntypedFormBuilder } from '@angular/forms';
 import { SystemService } from '../../shared/SystemService';
 import { GridFilter, KeyValueString, Ticket_Model } from '../../shared/common_model';
 import { ticket_commongrid_Component } from '../../shared/grid/ticket_commongrid';
@@ -21,7 +21,7 @@ export class Requester_Ticket_ListComponent {
     FilterList: Array<KeyValueString> = [];
     @ViewChild(Row_ViewComponent) public Row_View: Row_ViewComponent;
     @ViewChild('commongrid') commongrid: ticket_commongrid_Component;
-    constructor(public fb: FormBuilder, public service: SystemService, public route: ActivatedRoute, public router: Router, public location: Location) {
+    constructor(public fb: UntypedFormBuilder, public service: SystemService, public route: ActivatedRoute, public router: Router, public location: Location) {
         this.service.GoTo_ScrollTop(window);
 
         this.gridFilter.push(<GridFilter>{ DisplayText: "lblAttachment", ColumnName: "HasAttachment", Type: "icon", Value: "", Is_Visible: true });

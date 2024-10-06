@@ -1,6 +1,6 @@
 ﻿import { Component, ViewChild, ElementRef } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { SystemService } from '../shared/SystemService';
 import { KeyValueDefault, Description_Model, Solution_Model } from '../shared/common_model';
 import { AlertType } from '../shared/common_model';
@@ -18,9 +18,9 @@ export class Solution_DetailComponent {
     model: Common_Solution_Detail_Model;
     Filter_SubCategory_List: Array<KeyValueDefault> = []; Filter_ItemList: Array<KeyValueDefault> = [];
     minStDate: Date = new Date(); AttachmentList: Array<any> = [];
-    SolutionForm: FormGroup; DisplaySolutionID: string; SolutionID: number;
+    SolutionForm: UntypedFormGroup; DisplaySolutionID: string; SolutionID: number;
     @ViewChild('focus') inpfocus: ElementRef;
-    constructor(public fb: FormBuilder, public service: SystemService, public route: ActivatedRoute, public router: Router) {
+    constructor(public fb: UntypedFormBuilder, public service: SystemService, public route: ActivatedRoute, public router: Router) {
         this.service.GoTo_ScrollTop(window);
         this.DisplaySolutionID = this.route.snapshot.paramMap.get("id");
         this.InitSolutionForm();

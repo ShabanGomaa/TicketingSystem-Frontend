@@ -1,6 +1,6 @@
 ﻿import { Component, ViewChild, ElementRef } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { Location } from '@angular/common';
 import { SystemService } from '../../shared/SystemService';
 import { KeyValueDefault, Ticket_Model, Description_Model } from '../../shared/common_model';
@@ -17,10 +17,10 @@ export class Requester_Ticket_DetailComponent {
     model: Common_Ticket_Detail_Model;
     Filter_SubCategory_List: Array<KeyValueDefault> = []; Filter_ItemList: Array<KeyValueDefault> = [];
     minStDate: Date = new Date(); AttachmentList: Array<any> = [];
-    TicketForm: FormGroup;
+    TicketForm: UntypedFormGroup;
     DisplayTicketID: string; TicketID: number;
     ticket_model: Ticket_Model;
-    constructor(public fb: FormBuilder, public service: SystemService, public route: ActivatedRoute, public router: Router, public location: Location) {
+    constructor(public fb: UntypedFormBuilder, public service: SystemService, public route: ActivatedRoute, public router: Router, public location: Location) {
         this.service.GoTo_ScrollTop(window);
         this.DisplayTicketID = this.route.snapshot.paramMap.get("id");
         this.InitTicketForm();

@@ -1,6 +1,6 @@
 ﻿import { Component, ViewChild, ElementRef } from '@angular/core';
 import { Router } from '@angular/router';
-import { FormBuilder, FormGroup, Validators, NgForm } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators, NgForm } from '@angular/forms';
 import { SystemService } from '../../shared/SystemService';
 import { GridFilter, KeyValue } from '../../shared/common_model';
 import { ModalDialog } from '../../shared/modal.dialog';
@@ -17,7 +17,7 @@ export class ItemComponent {
     totalitems: number; gridFilter: Array<GridFilter> = [];
     Is_SaveAndAddNew: boolean = false;
     SubCategoryList: Array<KeyValue> = [];
-    constructor(public fb: FormBuilder, public service: SystemService, public router: Router) {
+    constructor(public fb: UntypedFormBuilder, public service: SystemService, public router: Router) {
         this.service.GoTo_ScrollTop(window);
 
         this.gridFilter.push(<GridFilter>{ DisplayText: "lblItemName", ColumnName: "Name", Condition: "no", Type: "string", Value: "", Is_Visible: true });
@@ -53,7 +53,7 @@ export class ItemComponent {
     pageChanged(obj: any) { }
 
     //Add/Edit 
-    ItemForm: FormGroup; isEdit = false;
+    ItemForm: UntypedFormGroup; isEdit = false;
     @ViewChild('f') form: NgForm;
     @ViewChild("modalAdd") modalAdd: ModalDialog;
     initForm() {

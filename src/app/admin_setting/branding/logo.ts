@@ -1,6 +1,6 @@
 ﻿import { Component, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
-import { FormBuilder, FormGroup, NgForm } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, NgForm } from '@angular/forms';
 import { SystemService } from '../../shared/SystemService';
 import { AlertType } from '../../shared/common_model';
 
@@ -15,7 +15,7 @@ export class LogoComponent {
     public LogoName: string = "";
     public allowedExtensions: Array<string> = ["png", "jpg", "jpeg", "gif", "bmp"];
     public imageUrl: string;
-    constructor(public fb: FormBuilder, public service: SystemService, public router: Router) {
+    constructor(public fb: UntypedFormBuilder, public service: SystemService, public router: Router) {
         this.service.GoTo_ScrollTop(window);
         this.initForm();
     }
@@ -24,7 +24,7 @@ export class LogoComponent {
     }
 
     //Add/Edit 
-    LogoForm: FormGroup;
+    LogoForm: UntypedFormGroup;
     @ViewChild('f') form: NgForm;
     initForm() {
         this.LogoForm = this.fb.group({

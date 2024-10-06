@@ -1,6 +1,6 @@
 ﻿import { Component, ViewChild, Output, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
-import { FormBuilder } from '@angular/forms';
+import { UntypedFormBuilder } from '@angular/forms';
 import { SystemService } from '../../shared/SystemService';
 import { GridFilter, UserManagement_Model, AlertType } from '../../shared/common_model';
 import { ModalDialog } from '../../shared/modal.dialog';
@@ -19,7 +19,7 @@ export class User_Technician_ListComponent {
     @ViewChild("modalUser_Technician") modalUser_Technician: ModalDialog;
     @ViewChild("modalViewUser") modalViewUser: ModalDialog;
     isMultiSelect_Row = false;
-    constructor(public fb: FormBuilder, public service: SystemService, public router: Router
+    constructor(public fb: UntypedFormBuilder, public service: SystemService, public router: Router
     ) {
 
         this.service.GoTo_ScrollTop(window);

@@ -1,6 +1,6 @@
 ﻿import { Component, ViewChild } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { FormBuilder } from '@angular/forms';
+import { UntypedFormBuilder } from '@angular/forms';
 import { Location } from '@angular/common';
 import { SystemService } from '../../shared/SystemService';
 import { GridFilter, Solution_Model } from '../../shared/common_model';
@@ -20,7 +20,7 @@ export class Requester_Solution_ListComponent {
     AgentList: Array<any> = []; selectedAgent: any;
     @ViewChild(Row_ViewComponent) public Row_View: Row_ViewComponent;
     @ViewChild('commongrid') commongrid: ticket_commongrid_Component;
-    constructor(public fb: FormBuilder, public service: SystemService, public route: ActivatedRoute, public router: Router, public location: Location) {
+    constructor(public fb: UntypedFormBuilder, public service: SystemService, public route: ActivatedRoute, public router: Router, public location: Location) {
 
         this.service.GoTo_ScrollTop(window);
 

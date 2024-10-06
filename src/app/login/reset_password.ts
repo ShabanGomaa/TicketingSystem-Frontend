@@ -1,6 +1,6 @@
 ﻿import { Component } from '@angular/core';
 import { Location } from '@angular/common';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { SystemService } from '../shared/SystemService';
 
@@ -15,11 +15,11 @@ import { AlertType } from '../shared/common_model';
 
 export class Reset_PasswordComponent {
     isLoading = false; returnUrl: string;
-    ResetPasswordForm: FormGroup;
+    ResetPasswordForm: UntypedFormGroup;
     public key: string;
     public UserName: string; public Email: string;
 
-    constructor(public fb: FormBuilder, public route: ActivatedRoute, public router: Router, public service: SystemService, public location: Location) {
+    constructor(public fb: UntypedFormBuilder, public route: ActivatedRoute, public router: Router, public service: SystemService, public location: Location) {
 
         this.route.params.subscribe((params: Params) => {
             this.key = params['key'];

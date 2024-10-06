@@ -1,6 +1,6 @@
 ﻿import { Component, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
-import { FormBuilder, FormGroup, Validators, NgForm } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators, NgForm } from '@angular/forms';
 import { SystemService } from '../../shared/SystemService';
 import { GridFilter } from '../../shared/common_model';
 import { ModalDialog } from '../../shared/modal.dialog';
@@ -18,7 +18,7 @@ export class RolesComponent {
     Is_Edit_Form: boolean = false;
     @ViewChild("modalAdd") modalAdd: ModalDialog;
     Default_Role_PermissionList: Array<RolePermission_Model> = []; Role_PermissionList: Array<RolePermission_Model> = [];
-    constructor(public fb: FormBuilder, public service: SystemService, public router: Router) {
+    constructor(public fb: UntypedFormBuilder, public service: SystemService, public router: Router) {
         this.service.GoTo_ScrollTop(window);
 
         this.gridFilter.push(<GridFilter>{ DisplayText: "lblRoleName", ColumnName: "Name", Condition: "no", Type: "string", Value: "", Is_Visible: true });
@@ -50,7 +50,7 @@ export class RolesComponent {
     pageChanged(obj: any) { }
 
     //Add/Edit 
-    RolesForm: FormGroup; isEdit = false;
+    RolesForm: UntypedFormGroup; isEdit = false;
     @ViewChild('f') form: NgForm;
     initForm() {
         this.RolesForm = this.fb.group({

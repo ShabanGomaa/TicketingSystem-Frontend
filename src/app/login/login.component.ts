@@ -1,6 +1,6 @@
 ﻿import { Component } from '@angular/core';
 import { Location } from '@angular/common';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { SystemService } from '../shared/SystemService';
 import { KeyValueString, ApiResponse } from '../shared/common_model';
@@ -13,14 +13,14 @@ import { AlertType } from '../shared/common_model';
 
 export class LoginComponent {
     isLoading = false; returnUrl: string; key: string;
-    LoginForm: FormGroup; ForgotPwdForm: FormGroup;
+    LoginForm: UntypedFormGroup; ForgotPwdForm: UntypedFormGroup;
     LanguageList: Array<KeyValueString> = []; SelectedLang: KeyValueString;
     response: any = {};
     sessionExpirationSeconds: number = 60 * 60;
     IsLoginForm: boolean = true;
     IsForgotPwdForm: boolean = false;
 
-    constructor(public fb: FormBuilder, public route: ActivatedRoute, public router: Router, public service: SystemService, public location: Location) {
+    constructor(public fb: UntypedFormBuilder, public route: ActivatedRoute, public router: Router, public service: SystemService, public location: Location) {
         this.bindLanguages();
         this.service.HasAccountData.then(() => {
             if (this.service.Account.UserID > 0) {

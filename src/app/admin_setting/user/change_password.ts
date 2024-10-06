@@ -1,6 +1,6 @@
 ﻿import { Component, ViewChild, EventEmitter, Output } from '@angular/core';
 import { Location } from '@angular/common';
-import { FormBuilder, NgForm, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, NgForm, UntypedFormGroup, Validators } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { SystemService } from '../../shared/SystemService';
 
@@ -16,13 +16,13 @@ import { AlertType } from '../../shared/common_model';
 
 export class Change_PasswordComponent {
     isLoading = false; returnUrl: string;
-    ChangePasswordForm: FormGroup;
+    ChangePasswordForm: UntypedFormGroup;
     public UserName: string;
     @Output('onSave') public onSave: EventEmitter<any> = new EventEmitter();
     @ViewChild('f') form: NgForm;
     @ViewChild("modalChangePwd") modalChangePwd: ModalDialog;
 
-    constructor(public fb: FormBuilder, public route: ActivatedRoute, public router: Router, public service: SystemService,
+    constructor(public fb: UntypedFormBuilder, public route: ActivatedRoute, public router: Router, public service: SystemService,
         public location: Location) {
 
         this.service.HasAccountData.then((data) => {

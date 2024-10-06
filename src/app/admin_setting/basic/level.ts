@@ -1,6 +1,6 @@
 ﻿import { Component, ViewChild, ElementRef } from '@angular/core';
 import { Router } from '@angular/router';
-import { FormBuilder, FormGroup, Validators, NgForm } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators, NgForm } from '@angular/forms';
 import { SystemService } from '../../shared/SystemService';
 import { GridFilter } from '../../shared/common_model';
 import { ModalDialog } from '../../shared/modal.dialog';
@@ -16,7 +16,7 @@ export class LevelComponent {
     isLoading = false; allItems: Array<Level_Model> = []; txtSearch = "";
     totalitems: number; gridFilter: Array<GridFilter> = [];
     Is_SaveAndAddNew: boolean = false;
-    constructor(public fb: FormBuilder, public service: SystemService, public router: Router) {
+    constructor(public fb: UntypedFormBuilder, public service: SystemService, public router: Router) {
         this.service.GoTo_ScrollTop(window);
 
         this.gridFilter.push(<GridFilter>{ DisplayText: "lblLevelName", ColumnName: "Name", Condition: "no", Type: "string", Value: "", Is_Visible: true });
@@ -47,7 +47,7 @@ export class LevelComponent {
     pageChanged(obj: any) { }
 
     //Add/Edit 
-    LevelForm: FormGroup; isEdit = false;
+    LevelForm: UntypedFormGroup; isEdit = false;
     @ViewChild('f') form: NgForm;
     @ViewChild("modalAdd") modalAdd: ModalDialog;
     initForm() {

@@ -1,6 +1,6 @@
 ﻿import { Component, ViewChild, ElementRef } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { FormBuilder, FormGroup, Validators, NgForm } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators, NgForm } from '@angular/forms';
 import { Location } from '@angular/common';
 import { SystemService } from '../../shared/SystemService';
 import { KeyValue, AlertType } from '../../shared/common_model';
@@ -13,12 +13,12 @@ import { KeyValue, AlertType } from '../../shared/common_model';
 export class Requester_ProfileComponent {
     isLoading = false;
     RoleList: Array<KeyValue> = []; Is_Agent: boolean = false;
-    UserManagementForm: FormGroup;
+    UserManagementForm: UntypedFormGroup;
     @ViewChild('f') form: NgForm;
     imageUrl: string = "/assets/images/profile.png";
     allowedExtensions: Array<string> = ["png", "jpg", "jpeg", "gif", "bmp"];
     @ViewChild('displayName') inpfocus: ElementRef;
-    constructor(public fb: FormBuilder, public service: SystemService, public route: ActivatedRoute, public router: Router, public location: Location) {
+    constructor(public fb: UntypedFormBuilder, public service: SystemService, public route: ActivatedRoute, public router: Router, public location: Location) {
         this.service.GoTo_ScrollTop(window);
         this.initForm();
     }

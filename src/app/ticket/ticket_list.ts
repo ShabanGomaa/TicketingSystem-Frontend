@@ -1,7 +1,7 @@
 ﻿import { Component, ViewChild, ViewContainerRef, AfterViewInit } from '@angular/core';
 import { Location } from '@angular/common';
 import { Router, ActivatedRoute } from '@angular/router';
-import { FormBuilder, FormGroup, Validators, NgForm } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators, NgForm } from '@angular/forms';
 import { SystemService } from '../shared/SystemService';
 import { GridFilter, KeyValue, KeyValueString, Ticket_Model, Ticket_Model_Export } from '../shared/common_model';
 import { ModalDialog } from '../shared/modal.dialog';
@@ -24,7 +24,7 @@ export class Ticket_ListComponent {
     AgentList: Array<any> = []; selectedAgent: number = 0;
     @ViewChild(Row_ViewComponent) public Row_View: Row_ViewComponent;
     @ViewChild('commongrid') commongrid: ticket_commongrid_Component;
-    constructor(public fb: FormBuilder, public service: SystemService, public route: ActivatedRoute, public router: Router, public location: Location) {
+    constructor(public fb: UntypedFormBuilder, public service: SystemService, public route: ActivatedRoute, public router: Router, public location: Location) {
         this.service.GoTo_ScrollTop(window);
 
         this.gridFilter.push(<GridFilter>{ DisplayText: "lblAttachment", ColumnName: "HasAttachment", Type: "icon", Value: "", Is_Visible: true });
@@ -355,7 +355,7 @@ export class Ticket_ListComponent {
     }
 
     //Close Tickets
-    CloseTicketForm: FormGroup;
+    CloseTicketForm: UntypedFormGroup;
     @ViewChild("modalCloseTicket") modalCloseTicket: ModalDialog;
     StatusList: Array<any> = []; CLosedStatusList: Array<any> = []; TicketCloseModeList: Array<any> = [];
     async InitCloseTicketForm() {

@@ -1,6 +1,6 @@
 ﻿import { Component, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
-import { FormBuilder, FormGroup, NgForm } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, NgForm } from '@angular/forms';
 import { SystemService } from '../../shared/SystemService';
 import { KeyValueString, AlertType } from '../../shared/common_model';
 
@@ -12,7 +12,7 @@ import { KeyValueString, AlertType } from '../../shared/common_model';
 export class App_SettingComponent {
     isLoading = false;
     public LanguageList: Array<KeyValueString> = [];
-    constructor(public fb: FormBuilder, public service: SystemService, public router: Router) {
+    constructor(public fb: UntypedFormBuilder, public service: SystemService, public router: Router) {
         this.service.GoTo_ScrollTop(window);
 
         this.service.Get_Languages().then((res) => { this.LanguageList = res; });
@@ -23,7 +23,7 @@ export class App_SettingComponent {
     }
 
     //Add/Edit 
-    ApplicationSettingForm: FormGroup;
+    ApplicationSettingForm: UntypedFormGroup;
     @ViewChild('f') form: NgForm;
     initForm() {
         this.ApplicationSettingForm = this.fb.group({

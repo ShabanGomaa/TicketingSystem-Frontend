@@ -1,6 +1,6 @@
 ﻿import { Component, ViewChild, ElementRef } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { Location } from '@angular/common';
 import { SystemService } from '../shared/SystemService';
 import { KeyValueDefault, UserManagement_Model } from '../shared/common_model';
@@ -24,11 +24,11 @@ export class Ticket_NewComponent {
     ClientList: Array<UserManagement_Model> = []; selectedClient: UserManagement_Model;
     Filter_SubCategory_List: Array<KeyValueDefault> = []; Filter_ItemList: Array<KeyValueDefault> = [];
     minStDate: Date = new Date();
-    TicketForm: FormGroup;
+    TicketForm: UntypedFormGroup;
     @ViewChild(User_Technician_ListComponent) public UserSelect: User_Technician_ListComponent;
     DueDate_Config: FlatpickrOptions = this.service.CommonDateConfig(); @ViewChild('dueDate') dueDate;
     @ViewChild('focus') inpfocus: ElementRef;
-    constructor(public fb: FormBuilder, public service: SystemService, public route: ActivatedRoute, public router: Router, public location: Location) {
+    constructor(public fb: UntypedFormBuilder, public service: SystemService, public route: ActivatedRoute, public router: Router, public location: Location) {
         this.service.GoTo_ScrollTop(window);
         this.InitTicketForm();
         this.Not_AllowedExtensions = this.service.Get_NotAllowedExtensions();

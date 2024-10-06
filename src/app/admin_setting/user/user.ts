@@ -1,6 +1,6 @@
 ﻿import { Component, ViewChild } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { FormBuilder, FormGroup, Validators, NgForm } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators, NgForm } from '@angular/forms';
 import { Location } from '@angular/common';
 import { SystemService } from '../../shared/SystemService';
 import { GridFilter, KeyValue } from '../../shared/common_model';
@@ -25,7 +25,7 @@ export class UserComponent {
 	public UserID: number = 0; Title: string;
 	Is_Agent_Only = false;
 	header_title = '';
-	constructor(public fb: FormBuilder, public service: SystemService, public route: ActivatedRoute, public router: Router, public location: Location) {
+	constructor(public fb: UntypedFormBuilder, public service: SystemService, public route: ActivatedRoute, public router: Router, public location: Location) {
 		this.service.GoTo_ScrollTop(window);
 
 		this.gridFilter.push(<GridFilter>{ DisplayText: "", ColumnName: "ProfilePicture", Type: "image", Value: "", Is_Visible: true, TextAlign: "text-center", Width: 5 });
@@ -105,7 +105,7 @@ export class UserComponent {
 	}
 
 	//Add/Edit 
-	UserManagementForm: FormGroup; isEdit = false;
+	UserManagementForm: UntypedFormGroup; isEdit = false;
 	@ViewChild('f') form: NgForm;
 	initForm() {
 		this.UserManagementForm = this.fb.group({

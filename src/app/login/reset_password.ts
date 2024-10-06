@@ -9,7 +9,6 @@ import { AlertType } from '../shared/common_model';
 
 
 @Component({
-    moduleId: module.id,
     templateUrl: './reset_password.html'
 })
 

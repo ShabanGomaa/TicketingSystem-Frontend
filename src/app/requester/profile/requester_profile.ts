@@ -6,7 +6,6 @@ import { SystemService } from '../../shared/SystemService';
 import { KeyValue, AlertType } from '../../shared/common_model';
 
 @Component({
-    moduleId: module.id,
     templateUrl: './requester_profile.html'
 })
 

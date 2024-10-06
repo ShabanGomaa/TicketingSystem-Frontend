@@ -7,7 +7,6 @@ import { KeyValueString, ApiResponse } from '../shared/common_model';
 import { AlertType } from '../shared/common_model';
 
 @Component({
-    moduleId: module.id,
     templateUrl: './login.component.html'
 })
 

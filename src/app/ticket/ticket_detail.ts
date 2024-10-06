@@ -14,7 +14,6 @@ import { FocusInvalidDirective } from '../shared/app.directive';
 declare var $: JQueryStatic;
 
 @Component({
-    moduleId: module.id,
     templateUrl: './ticket_detail.html',
     providers: [FocusInvalidDirective]
 })

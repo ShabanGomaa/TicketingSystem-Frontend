@@ -1,7 +1,6 @@
 ﻿import { Component } from '@angular/core';
 import { SystemService } from '../shared/SystemService';
 @Component({
-    moduleId: module.id,
     templateUrl: './admin_dashboard.html'
 })
 

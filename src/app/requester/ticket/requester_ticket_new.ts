@@ -8,7 +8,6 @@ import { AlertType } from '../../shared/common_model';
 declare var $: JQueryStatic;
 
 @Component({
-    moduleId: module.id,
     templateUrl: './requester_ticket_new.html'
 })
 

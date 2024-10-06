@@ -9,7 +9,6 @@ import { ModalDialog } from '../../shared/modal.dialog';
 import { AlertType } from '../../shared/common_model';
 
 @Component({
-    moduleId: module.id,
     selector: 'change-password',
     templateUrl: './change_password.html'
 })

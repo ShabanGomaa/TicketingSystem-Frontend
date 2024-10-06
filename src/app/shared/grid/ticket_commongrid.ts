@@ -6,7 +6,6 @@ import { SystemService } from '../SystemService';
 import { FlatpickrOptions } from 'ng2-flatpickr';
 
 @Component({
-    moduleId: module.id,
     selector: 'ticket-commongrid',
     templateUrl: './ticket_commongrid.html',
     host: {

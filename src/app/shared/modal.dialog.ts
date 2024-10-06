@@ -1,7 +1,6 @@
 ﻿import { Component, Input, Output, EventEmitter, ElementRef, HostListener } from '@angular/core'
 
 @Component({
-    moduleId: module.id,
     host: {
         '(document:click)': 'onClick($event)',
         '[attr.id]': 'id'

@@ -13,7 +13,6 @@ declare var $: JQueryStatic;
 
 
 @Component({
-    moduleId: module.id,
     templateUrl: './ticket_list.html'
 })
 

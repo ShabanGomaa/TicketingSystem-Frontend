@@ -10,7 +10,6 @@ import { FlatpickrOptions } from 'ng2-flatpickr';
 declare var $: JQueryStatic;
 
 @Component({
-    moduleId: module.id,
     templateUrl: './notification.html'
 })
 

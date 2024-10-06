@@ -5,7 +5,6 @@ import { User_Technician_ListComponent } from '../admin_setting/user/user_techni
 import { Description_Model } from '../shared/common_model';
 
 @Component({
-    moduleId: module.id,
     selector: 'row-view',
     templateUrl: './row_view.html'
 })

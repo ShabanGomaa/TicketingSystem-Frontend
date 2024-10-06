@@ -5,7 +5,6 @@ import { SystemService } from '../../shared/SystemService';
 import { KeyValueString, AlertType } from '../../shared/common_model';
 
 @Component({
-    moduleId: module.id,
     templateUrl: './app_setting.html'
 })
 

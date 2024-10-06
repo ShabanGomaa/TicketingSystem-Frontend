@@ -5,7 +5,6 @@ import { SystemService } from '../../shared/SystemService';
 import { AlertType } from '../../shared/common_model';
 
 @Component({
-    moduleId: module.id,
     templateUrl: './agent_setting.html'
 })
 

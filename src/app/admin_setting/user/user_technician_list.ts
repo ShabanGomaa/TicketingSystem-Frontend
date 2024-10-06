@@ -6,7 +6,6 @@ import { GridFilter, UserManagement_Model, AlertType } from '../../shared/common
 import { ModalDialog } from '../../shared/modal.dialog';
 
 @Component({
-    moduleId: module.id,
     selector: 'user-technician',
     templateUrl: './user_technician_list.html'
 })

@@ -6,7 +6,6 @@ import { BaseChartDirective } from 'ng2-charts';
 import 'chart.piecelabel.js';
 
 @Component({
-    moduleId: module.id,
     selector: 'app',
     templateUrl: './dashboard.html'
 })

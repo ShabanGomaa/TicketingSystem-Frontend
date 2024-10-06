@@ -10,7 +10,6 @@ import { elementAt } from 'rxjs-compat/operator/elementAt';
 
 
 @Component({
-	moduleId: module.id,
 	templateUrl: './user.html'
 })
 

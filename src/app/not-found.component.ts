@@ -1,7 +1,6 @@
 ﻿import { Component } from '@angular/core';
 import { SystemService } from './shared/SystemService';
 @Component({
-    moduleId: module.id,
     template: `
 <div class="main-panel" style="width:100%;">
             <div class="content-wrapper d-flex align-items-center text-center error-page pt-5" style="min-height:300px;">

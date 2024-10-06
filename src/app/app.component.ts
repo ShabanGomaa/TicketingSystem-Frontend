@@ -3,7 +3,6 @@ import { Router, Event as RouterEvent, NavigationStart, NavigationEnd, Navigatio
 import { SystemService } from './shared/SystemService'
 
 @Component({
-    moduleId: module.id,
     selector: 'app-root',
     templateUrl: './app.html',
 })

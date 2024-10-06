@@ -10,7 +10,6 @@ import { AlertType } from '../shared/common_model';
 declare var $: JQueryStatic;
 
 @Component({
-    moduleId: module.id,
     templateUrl: './solution_list.html'
 })
 

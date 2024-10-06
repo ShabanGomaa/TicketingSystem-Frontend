@@ -5,7 +5,6 @@ import { BaseChartDirective } from 'ng2-charts';
 import { FlatpickrOptions } from 'ng2-flatpickr';
 
 @Component({
-    moduleId: module.id,
     templateUrl: './summary.html'
 })
 

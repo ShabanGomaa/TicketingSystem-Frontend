@@ -4,7 +4,6 @@ import { SystemService } from '../shared/SystemService';
 import { KeyValueString } from '../shared/common_model'
 
 @Component({
-    moduleId: module.id,
     selector: 'app-header',
     templateUrl: './header.html'
 })

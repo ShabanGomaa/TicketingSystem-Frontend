@@ -8,7 +8,6 @@ import { ModalDialog } from '../shared/modal.dialog';
 declare var $: JQueryStatic;
 
 @Component({
-    moduleId: module.id,
     selector: 'solution_find-list',
     templateUrl: './solution_find_list.html'
 })

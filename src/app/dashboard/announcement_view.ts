@@ -3,7 +3,6 @@ import { SystemService } from '../shared/SystemService';
 import { ModalDialog } from '../shared/modal.dialog';
 
 @Component({
-    moduleId: module.id,
     selector: 'announcement-view',
     templateUrl: './announcement_view.html'
 })

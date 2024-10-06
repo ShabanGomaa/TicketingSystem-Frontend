@@ -11,7 +11,6 @@ declare var $: JQueryStatic;
 
 
 @Component({
-    moduleId: module.id,
     templateUrl: './requester_ticket_list.html'
 })
 

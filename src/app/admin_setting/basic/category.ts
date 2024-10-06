@@ -8,7 +8,6 @@ import { AlertType } from '../../shared/common_model';
 
 
 @Component({
-    moduleId: module.id,
     templateUrl: './category.html'
 })
 

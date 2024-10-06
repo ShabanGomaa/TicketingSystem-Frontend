@@ -7,7 +7,6 @@ import { User_Technician_ListComponent } from '../user/user_technician_list';
 
 
 @Component({
-    moduleId: module.id,
     templateUrl: './tech_autoassign.html'
 })
 

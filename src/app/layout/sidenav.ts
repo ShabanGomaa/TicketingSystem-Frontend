@@ -4,7 +4,6 @@ import { slideInOut } from '../shared/app.directive';
 
 
 @Component({
-    moduleId: module.id,
     selector: 'app-sidenav',
     templateUrl: './sidenav.html',
     animations: [slideInOut]

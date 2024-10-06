@@ -1,10 +1,10 @@
 ﻿import { Injectable } from '@angular/core';
-import { Router, CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
+import { Router, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 
 import { SystemService } from './shared/SystemService';
 
 @Injectable()
-export class AuthGuard implements CanActivate {
+export class AuthGuard  {
     public defered = new Deferred<boolean>();
     public lastURL: string;
     constructor(public router: Router, public service: SystemService) { }

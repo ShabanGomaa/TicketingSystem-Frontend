@@ -5,7 +5,6 @@ import { Dashboard_Summary_Model, ModuleType } from '../../shared/common_model';
 import { BaseChartDirective } from 'ng2-charts';
 
 @Component({
-    moduleId: module.id,
     templateUrl: './requester_dashboard.html'
 })
 

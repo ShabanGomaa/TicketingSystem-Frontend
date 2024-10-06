@@ -8,7 +8,6 @@ import { FocusInvalidDirective } from '../shared/app.directive';
 declare var $: JQueryStatic;
 
 @Component({
-    moduleId: module.id,
     templateUrl: './solution_detail.html',
     providers: [FocusInvalidDirective]
 })

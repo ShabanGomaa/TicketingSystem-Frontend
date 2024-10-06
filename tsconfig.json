@@ -10,28 +10,21 @@
     "declaration": false,
     "downlevelIteration": true,
     "importHelpers": true,
-    "target": "es2020",
+    "target": "ES2022",
     "moduleResolution": "node",
-    "lib": [ "es6", "dom" ],
-    "typeRoots": [
-      "node_modules/@types/"
-    ],
+    "lib": ["es6", "dom"],
+    "typeRoots": ["node_modules/@types/"],
     "noStrictGenericChecks": true,
-    "baseUrl": "./"
+    "baseUrl": "./",
+    "useDefineForClassFields": false
   },
   "compileOnSave": true,
-  "files": [
-    "src/main.ts",
-    "src/polyfills.ts"
-  ],
-  "include": [
-    "src/**/*.d.ts"
-  ],
+  "files": ["src/main.ts", "src/polyfills.ts"],
+  "include": ["src/**/*.d.ts"],
   //"exclude": [
   //  "node_modules"
   //],
   "angularCompilerOptions": {
-    "enableIvy": true,
     "fullTemplateTypeCheck": true,
     "strictInjectionParameters": true
   }

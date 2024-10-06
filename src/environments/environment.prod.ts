@@ -1,6 +1,6 @@
 ﻿export const environment = {
     production: true,
-    Base_API_URL: 'http://192.168.248.22:71',
+    Base_API_URL: 'http://ticketing.somee.com',
     Site_URL: 'http://192.168.248.22:44',
     Expiration_Time: 60
 };

@@ -11,7 +11,7 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "@angular/build:application",
           "options": {
             "allowedCommonJsDependencies": [
               "rxjs",
@@ -20,11 +20,14 @@
               "ng2-charts",
               "chart.js"
             ],
-            "outputPath": "dist",
-            "resourcesOutputPath": "assets/images",
+            "outputPath": {
+              "base": "dist",
+              "media": "assetsimages"
+            },
             "index": "index.html",
-            "main": "src/main.ts",
-            "polyfills": "src/polyfills.ts",
+            "polyfills": [
+              "src/polyfills.ts"
+            ],
             "tsConfig": "tsconfig.json",
             "assets": [
               //static folders/files path
@@ -55,12 +58,11 @@
               //"node_modules/flatpickr/dist/plugins/monthSelect/index.js" //month/year flatpickr datepicker plugin              
             ],
             "aot": false,
-            "vendorChunk": true,
             "extractLicenses": false,
-            "buildOptimizer": false,
             "sourceMap": true,
             "optimization": false,
-            "namedChunks": true
+            "namedChunks": true,
+            "browser": "src/main.ts"
           },
           "configurations": {
             "production": {
@@ -75,8 +77,6 @@
               //"extractCss": true,
               "namedChunks": false,
               "aot": true,
-              "buildOptimizer": true,
-              "commonChunk": true,
               "budgets": [
                 {
                   "type": "initial",
@@ -90,7 +90,7 @@
           "defaultConfiguration": ""
         },
         "serve": {
-          "builder": "@angular-devkit/build-angular:dev-server",
+          "builder": "@angular/build:dev-server",
           "options": {
             "buildTarget": "BMSDESK:build"
           },
@@ -101,7 +101,7 @@
           }
         },
         "extract-i18n": {
-          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "builder": "@angular/build:extract-i18n",
           "options": {
             "buildTarget": "BMSDESK:build"
           }

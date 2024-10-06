@@ -1,7 +1,6 @@
 ﻿import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { Routes, RouterModule } from '@angular/router';
+
 
 import { ModalDialog } from './modal.dialog';
 import { ColorPickerModule } from 'ngx-color-picker';
@@ -30,23 +29,28 @@ import { AlertComponent } from './alert';
 import { ChartsModule } from 'ng2-charts';
 import { Ng2FlatpickrModule } from 'ng2-flatpickr';
 import { TypeaheadModule } from 'ngx-bootstrap/typeahead';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 
-import { TooltipModule } from 'ng2-tooltip-directive';
-import { TooltipOptions } from 'ng2-tooltip-directive';
-export const MyDefaultTooltipOptions: TooltipOptions = {
-    'show-delay': 300,
-    'placement': 'top',
-    'theme' : 'light'
-}
+// import { TooltipModule } from 'ng2-tooltip-directive';
+// import { TooltipOptions } from 'ng2-tooltip-directive';
+// export const MyDefaultTooltipOptions: TooltipOptions = {
+//     'show-delay': 300,
+//     'placement': 'top',
+//     'theme' : 'light'
+// }
 
 
 @NgModule({
-    imports: [CommonModule, FormsModule, ReactiveFormsModule, RouterModule, ColorPickerModule, ChartsModule, Ng2FlatpickrModule, TypeaheadModule.forRoot(), TooltipModule.forRoot(MyDefaultTooltipOptions as TooltipOptions)],
+    imports: [CommonModule, FormsModule, ReactiveFormsModule, RouterModule,
+        //ColorPickerModule, ChartsModule, Ng2FlatpickrModule, TypeaheadModule.forRoot(),
+        //    TooltipModule.forRoot(MyDefaultTooltipOptions as TooltipOptions)
+    ],
     declarations: [TranslatePipe, AlertComponent, ModalDialog, FilterArrayPipe, FilterArrayObjectPipe, SumPipe, SafeHtmlPipe, fileTypePipe, NumberOnly, FocusInvalidDirective, commongrid_Component, ticket_commongrid_Component,
         User_Technician_ListComponent, Change_PasswordComponent, Announcement_ViewComponent, Row_ViewComponent, Solution_Find_ListComponent
     ],
     exports: [FormsModule, ReactiveFormsModule, TranslatePipe, AlertComponent, ModalDialog, FilterArrayPipe, FilterArrayObjectPipe, SumPipe, SafeHtmlPipe, fileTypePipe,
-        ColorPickerModule, ChartsModule, Ng2FlatpickrModule, TypeaheadModule, TooltipModule,
+        ColorPickerModule, //ChartsModule, Ng2FlatpickrModule, TypeaheadModule,//TooltipModule,
         NumberOnly, FocusInvalidDirective, commongrid_Component, ticket_commongrid_Component,
         User_Technician_ListComponent, Change_PasswordComponent, Announcement_ViewComponent, Row_ViewComponent, Solution_Find_ListComponent
     ],

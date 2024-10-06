@@ -53,7 +53,14 @@
               //"src/assets/js/tooltipster.min.js",
               "src/assets/js/jquery.webui-popover.min.js"
               //"node_modules/flatpickr/dist/plugins/monthSelect/index.js" //month/year flatpickr datepicker plugin              
-            ]
+            ],
+            "aot": false,
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
           },
           "configurations": {
             "production": {
@@ -69,8 +76,6 @@
               "namedChunks": false,
               "aot": true,
               "buildOptimizer": true,
-              "extractLicenses": false,
-              "vendorChunk": true,
               "commonChunk": true,
               "budgets": [
                 {
@@ -81,7 +86,8 @@
               ],
               "optimization": true
             }
-          }
+          },
+          "defaultConfiguration": ""
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",

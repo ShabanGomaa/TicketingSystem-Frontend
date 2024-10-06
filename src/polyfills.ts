@@ -1,7 +1,7 @@
 ﻿//import 'core-js/es6';
 //import 'core-js/es7/reflect';
 //import 'core-js/es7/array';
-//import 'zone.js/dist/zone';
+//import 'zone.js';
 
 //if (!Element.prototype.matches) {
 //    Element.prototype.matches = (<any>Element.prototype).msMatchesSelector || Element.prototype.webkitMatchesSelector;
@@ -64,7 +64,7 @@
 /***************************************************************************************************
  * Zone JS is required by default for Angular itself.
  */
-import 'zone.js/dist/zone';  // Included with Angular CLI.
+import 'zone.js';  // Included with Angular CLI.
 
 
 /***************************************************************************************************

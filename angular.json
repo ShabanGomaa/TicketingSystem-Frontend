@@ -92,18 +92,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "BMSDESK:build"
+            "buildTarget": "BMSDESK:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "BMSDESK:build:production"
+              "buildTarget": "BMSDESK:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "BMSDESK:build"
+            "buildTarget": "BMSDESK:build"
           }
         }
       }

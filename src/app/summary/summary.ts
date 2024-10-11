@@ -150,10 +150,10 @@ export class summaryComponent {
         //For Refresh Chart
         if (this.columnChart && this.columnChart.chart) {
             this.columnChart.ngOnDestroy();
-            this.columnChart.chartType = this.chartType;
+            //this.columnChart.chartType = this.chartType;
             this.columnChart.labels = this.ColumnChartLabels;
             this.columnChart.options = this.columnChartOptions;
-            this.columnChart.chart = this.columnChart.getChartBuilder(this.columnChart.ctx);
+            //this.columnChart.chart = this.columnChart.getChartBuilder(this.columnChart.ctx);
         }
     }
 
@@ -218,10 +218,10 @@ export class summaryComponent {
         //For Refresh Chart
         if (this.columnChart_Received && this.columnChart_Received.chart) {
             this.columnChart_Received.ngOnDestroy();
-            this.columnChart_Received.chartType = this.chartType_Received;
+            //this.columnChart_Received.chartType = this.chartType_Received;
             this.columnChart_Received.labels = this.ColumnChartLabels_Received;
             this.columnChart_Received.options = this.columnChartOptions_Received;
-            this.columnChart_Received.chart = this.columnChart_Received.getChartBuilder(this.columnChart_Received.ctx);
+            //this.columnChart_Received.chart = this.columnChart_Received.getChartBuilder(this.columnChart_Received.ctx);
         }
     }
 
@@ -286,10 +286,10 @@ export class summaryComponent {
         //For Refresh Chart
         if (this.columnChart_Closed && this.columnChart_Closed.chart) {
             this.columnChart_Closed.ngOnDestroy();
-            this.columnChart_Closed.chartType = this.chartType_Closed;
+            //this.columnChart_Closed.chartType = this.chartType_Closed;
             this.columnChart_Closed.labels = this.ColumnChartLabels_Closed;
             this.columnChart_Closed.options = this.columnChartOptions_Closed;
-            this.columnChart_Closed.chart = this.columnChart_Closed.getChartBuilder(this.columnChart_Closed.ctx);
+            //this.columnChart_Closed.chart = this.columnChart_Closed.getChartBuilder(this.columnChart_Closed.ctx);
         }
     }
 
@@ -342,7 +342,7 @@ export class summaryComponent {
                 pieceLabel: { render: 'value', fontColor: '#fff', fontSize: 13 }
             }
         }
-        else {            
+        else {
             this.OpenTicketChartData[0]['barThickness'] = 20;
             this.OpenTicketChartOptions = {
                 scaleShowVerticalLines: true, responsive: true, maintainAspectRatio: false,
@@ -357,10 +357,10 @@ export class summaryComponent {
         //For Refresh Chart
         if (this.OpenTicketChart && this.OpenTicketChart.chart) {
             this.OpenTicketChart.ngOnDestroy();
-            this.OpenTicketChart.chartType = this.chartType_OpenTicket;
+            //this.OpenTicketChart.chartType = this.chartType_OpenTicket;
             this.OpenTicketChart.labels = this.OpenTicketChartLabels;
             this.OpenTicketChart.options = this.OpenTicketChartOptions;
-            this.OpenTicketChart.chart = this.OpenTicketChart.getChartBuilder(this.OpenTicketChart.ctx);
+            //this.OpenTicketChart.chart = this.OpenTicketChart.getChartBuilder(this.OpenTicketChart.ctx);
         }
     }
 }

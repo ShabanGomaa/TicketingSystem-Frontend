@@ -25,13 +25,11 @@
               "media": "assetsimages"
             },
             "index": "index.html",
-            "polyfills": [
-              "src/polyfills.ts"
-            ],
+            "polyfills": ["src/polyfills.ts"],
             "tsConfig": "tsconfig.json",
             "assets": [
               //static folders/files path
-              "src/favicon.ico",
+              "src/images/favicon.ico",
               //,"src/assets"
               "src/assets/images",
               "src/.htaccess", // for rewrite url in php server
@@ -55,7 +53,7 @@
               "src/assets/kendo/kendo.all.min.js",
               //"src/assets/js/tooltipster.min.js",
               "src/assets/js/jquery.webui-popover.min.js"
-              //"node_modules/flatpickr/dist/plugins/monthSelect/index.js" //month/year flatpickr datepicker plugin              
+              //"node_modules/flatpickr/dist/plugins/monthSelect/index.js" //month/year flatpickr datepicker plugin
             ],
             "aot": false,
             "extractLicenses": false,

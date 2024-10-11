@@ -19,6 +19,9 @@ import { PriorityComponent } from './priority';
 import { LocationComponent } from './location';
 import { UrgencyComponent } from './urgency';
 import { NotificationComponent } from './notification';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatInputModule } from '@angular/material/input';
+import { MatNativeDateModule } from '@angular/material/core';
 
 
 
@@ -38,8 +41,13 @@ const routes: Routes = [
 
 ];
 @NgModule({
-    imports: [RouterModule.forChild(routes), CommonModule, SharedModule],
-    declarations: [Request_TypeComponent,CategoryComponent, SubCategoryComponent, ItemComponent, StatusComponent, DepartmentComponent, ImpactComponent, LevelComponent, PriorityComponent,
+    imports: [RouterModule.forChild(routes), CommonModule, SharedModule,
+        MatDatepickerModule,
+        MatInputModule,
+        MatNativeDateModule
+
+    ],
+    declarations: [Request_TypeComponent, CategoryComponent, SubCategoryComponent, ItemComponent, StatusComponent, DepartmentComponent, ImpactComponent, LevelComponent, PriorityComponent,
         LocationComponent, UrgencyComponent, NotificationComponent],
 
 })

@@ -10,6 +10,9 @@ import { Ticket_ListComponent } from './ticket_list';
 import { Ticket_NewComponent } from './ticket_new';
 import { Ticket_DetailComponent } from './ticket_detail';
 import { AuthGuard } from '../auth.guard';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatInputModule } from '@angular/material/input';
+import { MatNativeDateModule } from '@angular/material/core';
 
 
 const routes: Routes = [
@@ -18,7 +21,13 @@ const routes: Routes = [
     { path: 'detail/:id', component: Ticket_DetailComponent, data: { pageProp: 'Is_Edit_Ticket' }, canActivate: [AuthGuard] },
 ];
 @NgModule({
-    imports: [RouterModule.forChild(routes), CommonModule, SharedModule],
+    imports: [RouterModule.forChild(routes), CommonModule, SharedModule,
+
+        MatDatepickerModule,
+        MatInputModule,
+        MatNativeDateModule,
+
+    ],
     declarations: [Ticket_ListComponent, Ticket_NewComponent, Ticket_DetailComponent],
 
 })

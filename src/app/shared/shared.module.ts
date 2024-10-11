@@ -26,11 +26,12 @@ import { Solution_Find_ListComponent } from '../solution/solution_find_list';
 
 //import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import { AlertComponent } from './alert';
-import { ChartsModule } from 'ng2-charts';
-import { Ng2FlatpickrModule } from 'ng2-flatpickr';
-import { TypeaheadModule } from 'ngx-bootstrap/typeahead';
+
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatInputModule } from '@angular/material/input';
+import { MatNativeDateModule } from '@angular/material/core';
 
 // import { TooltipModule } from 'ng2-tooltip-directive';
 // import { TooltipOptions } from 'ng2-tooltip-directive';
@@ -43,6 +44,11 @@ import { RouterModule } from '@angular/router';
 
 @NgModule({
     imports: [CommonModule, FormsModule, ReactiveFormsModule, RouterModule,
+
+        MatDatepickerModule,
+        MatInputModule,
+        MatNativeDateModule
+
         //ColorPickerModule, ChartsModule, Ng2FlatpickrModule, TypeaheadModule.forRoot(),
         //    TooltipModule.forRoot(MyDefaultTooltipOptions as TooltipOptions)
     ],

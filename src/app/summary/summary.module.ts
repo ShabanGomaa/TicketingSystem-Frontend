@@ -7,6 +7,10 @@ import { Routes, RouterModule } from '@angular/router';
 import { SharedModule } from '../shared/shared.module';
 
 import { summaryComponent } from './summary'
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatInputModule } from '@angular/material/input';
+import { MatNativeDateModule } from '@angular/material/core';
+import { BaseChartDirective } from 'ng2-charts';
 
 
 const routes: Routes = [
@@ -14,7 +18,14 @@ const routes: Routes = [
 
 ];
 @NgModule({
-    imports: [RouterModule.forChild(routes), CommonModule, SharedModule],
+    imports: [RouterModule.forChild(routes), CommonModule, SharedModule,
+
+        MatDatepickerModule,
+        MatInputModule,
+        MatNativeDateModule,
+
+        BaseChartDirective
+    ],
     declarations: [summaryComponent],
 
 })

@@ -4,7 +4,7 @@
 
 export const environment = {
     production: false,
-    Base_API_URL: 'http://ticketing.somee.com',
+    Base_API_URL: 'https://ticketing.somee.com',
     Site_URL: 'http://192.168.248.22:44',
     Expiration_Time: 60
 };
